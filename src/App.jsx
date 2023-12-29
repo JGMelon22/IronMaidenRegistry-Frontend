@@ -1,8 +1,11 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 
 function App() {
+
+  const instrumentsBaseUrl = 'http://localhost:5200/api/Instruments'
+  const membersBaseUrl = 'http://localhost:5200/api/Members'
+  const songsBaseUrl = 'http://localhost:5200/api/Songs'
 
   return (
     <>
