@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import axios from 'axios'
 import './App.css'
 
 function App() {
@@ -6,6 +7,39 @@ function App() {
   const instrumentsBaseUrl = 'http://localhost:5200/api/Instruments'
   const membersBaseUrl = 'http://localhost:5200/api/Members'
   const songsBaseUrl = 'http://localhost:5200/api/Songs'
+
+
+  const [dataInstrument, setDataInstrument] = useState([])
+  const [dataMember, setDataMember] = useState([])
+  const [dataSong, setDataSong] = useState([])
+
+  // Get Data
+  const requestInstrumentsGet = async () => {
+    await axios.get(instrumentsBaseUrl)
+      .then(response => {
+        setDataInstrument(response.dataInstrument)
+      }).catch(error => {
+        alert(error)
+      })
+  }
+
+  const requestMembersGet = async () => {
+    await axios.get(membersBaseUrl)
+      .then(response => {
+        setDataMember(response.dataMember)
+      }).catch(error => {
+        alert(error)
+      })
+  }
+
+  const requestSongsGet = async () => {
+    await axios.get(songsBaseUrl)
+      .then(response => {
+        setDataSong(response.dataSong)
+      }).catch(error => {
+        alert(error)
+      })
+  }
 
   return (
     <>
