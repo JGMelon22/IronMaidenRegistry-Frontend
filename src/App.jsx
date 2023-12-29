@@ -55,7 +55,7 @@ function App() {
                 <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
               </div>
             </div>
-          </div> aqui
+          </div>
           <div className='col'>
             <div className='d-flex flex-column flex-lg-row'>
               <div className='w-100'><img className='rounded img-fluid d-block w-100 fit-cover' style={{ height: '200px' }} src='https://cdn.bootstrapstudio.io/placeholders/1400x800.png' /></div>
@@ -66,7 +66,7 @@ function App() {
             </div>
           </div>
         </div>
-        <footer className='text-center bg-dark'>
+        <footer className='text-center fixed-bottom'>
           <div className='container text-white py-4 py-lg-5'>
             <ul className='list-inline'>
               <li className='list-inline-item me-4'><a className='link-light' href='#'>Web design</a></li>
