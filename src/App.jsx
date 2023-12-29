@@ -23,44 +23,45 @@ function App() {
       <div className='container py-4 py-xl-5'>
         <div className='row mb-5'>
           <div className='col-md-8 col-xl-6 text-center mx-auto'>
-            <h2>Heading</h2>
-            <p className='w-lg-50'>Curae hendrerit donec commodo hendrerit egestas tempus, turpis facilisis nostra nunc. Vestibulum dui eget ultrices.</p>
+            <h2>Up the Iron's</h2>
+            <p className='w-lg-50'>In tribute to the greatest band of all time.</p>
           </div>
         </div>
         <div className='row gy-4 row-cols-1 row-cols-md-2'>
           <div className='col'>
             <div className='d-flex flex-column flex-lg-row'>
-              <div className='w-100'><img className='rounded img-fluid d-block w-100 fit-cover' style={{ height: '200px' }} src='https://cdn.bootstrapstudio.io/placeholders/1400x800.png' /></div>
+              <div className='w-100'><img className='rounded img-fluid d-block w-100 fit-cover' style={{ height: '200px' }} src='https://upload.wikimedia.org/wikipedia/pt/e/e3/Brave_New_World_-_Iron_Maiden.jpg' /></div>
               <div className='py-4 py-lg-0 px-lg-4'>
-                <h4>Lorem libero donec</h4>
-                <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                <h4>Brave New World</h4>
+                <p>The first album I've ever heard. Since them, I can't stop loving this band! The come back from Bruce Dickson and the third Rock in Rio edition.</p>
               </div>
             </div>
           </div>
           <div className='col'>
             <div className='d-flex flex-column flex-lg-row'>
-              <div className='w-100'><img className='rounded img-fluid d-block w-100 fit-cover' style={{ height: '200px' }} src='https://cdn.bootstrapstudio.io/placeholders/1400x800.png' /></div>
+              <div className='w-100'><img className='rounded img-fluid d-block w-100 fit-cover' style={{ height: '200px' }} src='https://upload.wikimedia.org/wikipedia/pt/2/23/The_x_factor_-_iron_maiden.jpg' /></div>
               <div className='py-4 py-lg-0 px-lg-4'>
-                <h4>Lorem libero donec</h4>
-                <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                <h4>The X Factor</h4>
+                <p>An absolutely time classic, powerful, deep and dark vocals from the master Blaze Bayley and the presence of the guitarist magician Janick Gers.</p>
+                <p>Man on the Edge made me cry inumerous times</p>
               </div>
             </div>
           </div>
           <div className='col'>
             <div className='d-flex flex-column flex-lg-row'>
-              <div className='w-100'><img className='rounded img-fluid d-block w-100 fit-cover' style={{ height: '200px' }} src='https://cdn.bootstrapstudio.io/placeholders/1400x800.png' /></div>
+              <div className='w-100'><img className='rounded img-fluid d-block w-100 fit-cover' style={{ height: '200px' }} src='https://upload.wikimedia.org/wikipedia/en/3/3a/Iron_Maiden_-_Virtual_XI.jpg' /></div>
               <div className='py-4 py-lg-0 px-lg-4'>
-                <h4>Lorem libero donec</h4>
-                <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                <h4>Virtual XII</h4>
+                <p>Say what you want, but The Clansman and Futureal are a hell of great songs. The inspiration an the will to fight from Blaze's voice always give goosebumps.</p>
               </div>
             </div>
           </div>
           <div className='col'>
             <div className='d-flex flex-column flex-lg-row'>
-              <div className='w-100'><img className='rounded img-fluid d-block w-100 fit-cover' style={{ height: '200px' }} src='https://cdn.bootstrapstudio.io/placeholders/1400x800.png' /></div>
+              <div className='w-100'><img className='rounded img-fluid d-block w-100 fit-cover' style={{ height: '200px' }} src='https://upload.wikimedia.org/wikipedia/en/9/9b/Iron_Maiden_-_Somewhere_in_Time.jpg' /></div>
               <div className='py-4 py-lg-0 px-lg-4'>
-                <h4>Lorem libero donec</h4>
-                <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                <h4>Somewhere in Time</h4>
+                <p>The goat, no more and no less. Simply a time classic for of energy from Wasted Years to the contagious rhythm from the The Loneliness of the Long Distance Runner.</p>
               </div>
             </div>
           </div>
