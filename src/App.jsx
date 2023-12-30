@@ -23,11 +23,16 @@ function App() {
 
   // Modals
   const [instrumentsDetails, setInstrumentsDetails] = useState(false);
+  const [memberDetails, setDataMemberDetails] = useState(false);
   const [songsDetails, setSongsDetails] = useState(false);
 
   // Modal State (open/close)
   const openCloseInstrumentsDetails = () => {
     setInstrumentsDetails(!instrumentsDetails);
+  }
+
+  const openCloseMembersDetails = () => {
+    setDataMemberDetails(!memberDetails);
   }
 
   const openCloseSongsDetails = () => {
@@ -71,7 +76,7 @@ function App() {
         </svg></span><span id='title' className='text-warning-emphasis'>Iron Maiden - Registry</span></a><button data-bs-toggle='collapse' className='navbar-toggler' data-bs-target='#navcol-5'><span className='visually-hidden'>Toggle navigation</span><span className='navbar-toggler-icon'></span></button>
           <div className='collapse navbar-collapse' id='navcol-5'>
             <ul className='navbar-nav ms-auto'>
-              <li className='nav-item'><a className='nav-link active' href='#'>Members</a></li>
+              <li className='nav-item'><a className='nav-link active' onClick={() => openCloseMembersDetails()} href='#'>Members</a></li>
               <li className='nav-item'><a className='nav-link' onClick={() => openCloseSongsDetails()} href='#'>Hits</a></li>
               <li className='nav-item'><a className='nav-link' onClick={() => openCloseInstrumentsDetails()} href='#'>Instruments</a></li>
             </ul>
@@ -202,6 +207,34 @@ function App() {
         </ModalBody>
         <ModalFooter>
           <button className='btn btn-secondary m-1' onClick={() => openCloseInstrumentsDetails()}>Close</button>
+        </ModalFooter>
+      </Modal>
+
+      { /* Instruments Details Modal */}
+      <Modal isOpen={memberDetails} className='modal-lg'>
+        <ModalHeader className='text-center mx-auto'>
+          <div>
+            <h3>The legends</h3>
+          </div>
+        </ModalHeader>
+        <ModalBody className='form-group'>
+          <table className='table table-bordered table-hover'>
+            <thead>
+              <tr>
+                <th className='text-center'>Full Name</th>
+                <th className='text-center'>Birth date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Steve Harris</td>
+                <td>12/03/1956</td>
+              </tr>
+            </tbody>
+          </table>
+        </ModalBody>
+        <ModalFooter>
+          <button className='btn btn-secondary m-1' onClick={() => openCloseMembersDetails()}>Close</button>
         </ModalFooter>
       </Modal>
 
