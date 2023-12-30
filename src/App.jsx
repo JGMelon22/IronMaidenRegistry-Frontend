@@ -23,10 +23,15 @@ function App() {
 
   // Modals
   const [instrumentsDetails, setInstrumentsDetails] = useState(false);
+  const [songsDetails, setSongsDetails] = useState(false);
 
   // Modal State (open/close)
   const openCloseInstrumentsDetails = () => {
     setInstrumentsDetails(!instrumentsDetails);
+  }
+
+  const openCloseSongsDetails = () => {
+    setSongsDetails(!songsDetails);
   }
 
   // Get Data
@@ -67,7 +72,7 @@ function App() {
           <div className='collapse navbar-collapse' id='navcol-5'>
             <ul className='navbar-nav ms-auto'>
               <li className='nav-item'><a className='nav-link active' href='#'>Members</a></li>
-              <li className='nav-item'><a className='nav-link' href='#'>Hits</a></li>
+              <li className='nav-item'><a className='nav-link' onClick={() => openCloseSongsDetails()} href='#'>Hits</a></li>
               <li className='nav-item'><a className='nav-link' onClick={() => openCloseInstrumentsDetails()} href='#'>Instruments</a></li>
             </ul>
           </div>
@@ -94,7 +99,7 @@ function App() {
             <div className='d-flex flex-column flex-lg-row'>
               <div className='w-100'><img className='rounded img-fluid d-block w-100 fit-cover' style={{ height: '200px' }} src='https://upload.wikimedia.org/wikipedia/pt/2/23/The_x_factor_-_iron_maiden.jpg' /></div>
               <div className='py-4 py-lg-0 px-lg-4'>
-                <h4>The X Factor</h4>
+                <h4 >The X Factor</h4>
                 <p>An absolutely time classic, powerful, deep and dark vocals from the master Blaze Bayley and the presence of the guitarist magician Janick Gers.</p>
               </div>
             </div>
@@ -125,7 +130,7 @@ function App() {
               <li className='list-inline-item me-4'><a className='link-light' href='https://github.com/JGMelon22/IronMaidenRegistryApi'>Back-end source code</a></li>
             </ul>
             <ul className='list-inline'>
-              <img width='3%' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+              <img width='3%' src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' />
             </ul>
             <p className='text-muted mb-0'>This is a fan project. All reserved rights are for:</p> <br />
             <p className='text-muted mb-0'>© 2023 - Iron Maiden - <a href='https://keanecreative.co.uk/?utm_source=ironmaiden&utm_medium=link&utm_campaign=websitelink'> Website Designed & Developed by Keane Creative Ltd.</a></p>
@@ -136,58 +141,58 @@ function App() {
       { /* Instruments Details Modal */}
       <Modal isOpen={instrumentsDetails}>
         <ModalHeader>
-          <div class="col-md-8 col-xl-6 text-center mx-auto">
-            <p class="w-lg-50">Meet the instruments from our heroes</p>
+          <div class='col-md-8 col-xl-6 text-center mx-auto'>
+            <p class='w-lg-50'>Meet the instruments from our heroes</p>
           </div>
         </ModalHeader>
         <ModalBody className='bg-dark'>
-          <div class="container py-4 py-xl-5">
-            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
-              <div class="col">
-                <div class="d-flex p-3">
-                  <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm"><img src={logoBass} width="23" height="50" /></div>
-                  <div class="px-2">
-                    <h5 class="mb-0 mt-1">Bass</h5>
+          <div class='container py-4 py-xl-5'>
+            <div class='row row-cols-1 row-cols-md-2 row-cols-xl-3'>
+              <div class='col'>
+                <div class='d-flex p-3'>
+                  <div class='bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm'><img src={logoBass} width='23' height='50' /></div>
+                  <div class='px-2'>
+                    <h5 class='mb-0 mt-1'>Bass</h5>
                   </div>
                 </div>
               </div>
-              <div class="col">
-                <div class="d-flex p-3">
-                  <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm"><img src={logoGuitar} width="23" height="50" /></div>
-                  <div class="px-2">
-                    <h5 class="mb-0 mt-1">Guitar</h5>
+              <div class='col'>
+                <div class='d-flex p-3'>
+                  <div class='bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm'><img src={logoGuitar} width='23' height='50' /></div>
+                  <div class='px-2'>
+                    <h5 class='mb-0 mt-1'>Guitar</h5>
                   </div>
                 </div>
               </div>
-              <div class="col">
-                <div class="d-flex p-3">
-                  <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm"><img src={logoVocals} width="23" height="50" /></div>
-                  <div class="px-2">
-                    <h5 class="mb-0 mt-1">Vocals</h5>
+              <div class='col'>
+                <div class='d-flex p-3'>
+                  <div class='bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm'><img src={logoVocals} width='23' height='50' /></div>
+                  <div class='px-2'>
+                    <h5 class='mb-0 mt-1'>Vocals</h5>
                   </div>
                 </div>
               </div>
-              <div class="col">
-                <div class="d-flex p-3">
-                  <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm"><img src={logoDrum} width="23" height="50" /></div>
-                  <div class="px-2">
-                    <h5 class="mb-0 mt-1">Drum</h5>
+              <div class='col'>
+                <div class='d-flex p-3'>
+                  <div class='bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm'><img src={logoDrum} width='23' height='50' /></div>
+                  <div class='px-2'>
+                    <h5 class='mb-0 mt-1'>Drum</h5>
                   </div>
                 </div>
               </div>
-              <div class="col">
-                <div class="d-flex p-3">
-                  <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm"><img src={logoKeyboard} width="23" height="50" /></div>
-                  <div class="px-2">
-                    <h5 class="mb-0 mt-1">Keyboard</h5>
+              <div class='col'>
+                <div class='d-flex p-3'>
+                  <div class='bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm'><img src={logoKeyboard} width='23' height='50' /></div>
+                  <div class='px-2'>
+                    <h5 class='mb-0 mt-1'>Keyboard</h5>
                   </div>
                 </div>
               </div>
-              <div class="col">
-                <div class="d-flex p-3">
-                  <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm"><img src={logoJoyHappiness} width="23" height="50" /></div>
-                  <div class="px-2">
-                    <h5 class="mb-0 mt-1">Joy and Happiness</h5>
+              <div class='col'>
+                <div class='d-flex p-3'>
+                  <div class='bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm'><img src={logoJoyHappiness} width='23' height='50' /></div>
+                  <div class='px-2'>
+                    <h5 class='mb-0 mt-1'>Joy and Happiness</h5>
                   </div>
                 </div>
               </div>
@@ -198,6 +203,55 @@ function App() {
           <button className='btn btn-secondary m-1' onClick={() => openCloseInstrumentsDetails()}>Close</button>
         </ModalFooter>
       </Modal>
+
+      { /* Songs Details Modal */}
+      <Modal isOpen={songsDetails} readOnly className='modal-xl'>
+        <ModalHeader className='text-center mx-auto'>
+          <div>
+            <h2>Time Classics</h2>
+            <p className='w-lg-75'>Top voted from each album and era from Maiden</p>
+          </div>
+        </ModalHeader>
+        <ModalBody className='form-group'>
+          <div class='row gy-4 row-cols-2 row-cols-md-4'>
+            <div class='col'>
+              <div class='card border-0 shadow-none'>
+                <div class='card-body text-center d-flex flex-column align-items-center p-0'><img class='rounded-circle mb-3 fit-cover' width='130' height='130' src='https://i.ytimg.com/vi/7DcVwd31uC0/maxresdefault.jpg' /></div>
+              </div>
+              <p class='text-muted mb-2'>Name:&nbsp;&nbsp;</p>
+              <p class='text-muted mb-2'>Duration in Minutes:&nbsp;</p>
+              <p class='text-muted mb-2'>Score:&nbsp;</p>
+            </div>
+            <div class='col'>
+              <div class='card border-0 shadow-none'>
+                <div class='card-body text-center d-flex flex-column align-items-center p-0'><img class='rounded-circle mb-3 fit-cover' width='130' height='130' src='https://i.ytimg.com/vi/p3Uy1YhBsvs/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&amp;rs=AOn4CLBooB-qMh8mPiPwcDBsI-gEwVXrHQ' /></div>
+              </div>
+              <p class='text-muted mb-2'>Name:&nbsp;&nbsp;</p>
+              <p class='text-muted mb-2'>Duration in Minutes:&nbsp;</p>
+              <p class='text-muted mb-2'>Score:&nbsp;</p>
+            </div>
+            <div class='col'>
+              <div class='card border-0 shadow-none'>
+                <div class='card-body text-center d-flex flex-column align-items-center p-0'><img class='rounded-circle mb-3 fit-cover' width='130' height='130' src='https://upload.wikimedia.org/wikipedia/pt/f/f7/Trooper.jpg' /></div>
+              </div>
+              <p class='text-muted mb-2'>Name:&nbsp;&nbsp;</p>
+              <p class='text-muted mb-2'>Duration in Minutes:&nbsp;</p>
+              <p class='text-muted mb-2'>Score:&nbsp;</p>
+            </div>
+            <div class='col'>
+              <div class='card border-0 shadow-none'>
+                <div class='card-body text-center d-flex flex-column align-items-center p-0'><img class='rounded-circle mb-3 fit-cover' width='130' height='130' src='https://upload.wikimedia.org/wikipedia/pt/6/64/Fear_of_the_dark_-_iron_maiden.jpg' /></div>
+              </div>
+              <p class='text-muted mb-2'>Name:&nbsp;&nbsp;</p>
+              <p class='text-muted mb-2'>Duration in Minutes:&nbsp;</p>
+              <p class='text-muted mb-2'>Score:&nbsp;</p>
+            </div>
+          </div>
+        </ModalBody>
+        <ModalFooter>
+          <button className='btn btn-secondary m-1' onClick={() => openCloseSongsDetails()}>Close</button>
+        </ModalFooter>
+      </Modal >
     </>
   )
 }
