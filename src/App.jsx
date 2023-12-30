@@ -139,18 +139,19 @@ function App() {
       </div>
 
       { /* Instruments Details Modal */}
-      <Modal isOpen={instrumentsDetails}>
-        <ModalHeader>
-          <div class='col-md-8 col-xl-6 text-center mx-auto'>
-            <p class='w-lg-50'>Meet the instruments from our heroes</p>
+      <Modal isOpen={instrumentsDetails} className='modal-lg'>
+        <ModalHeader className='text-center mx-auto'>
+          <div>
+            <p class='w-lg-50'>Meet the instruments</p>
+            <p>from our heroes</p>
           </div>
         </ModalHeader>
-        <ModalBody className='bg-dark'>
+        <ModalBody>
           <div class='container py-4 py-xl-5'>
             <div class='row row-cols-1 row-cols-md-2 row-cols-xl-3'>
               <div class='col'>
                 <div class='d-flex p-3'>
-                  <div class='bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm'><img src={logoBass} width='23' height='50' /></div>
+                  <div class='rounded bg-light'><img src={logoBass} width='23' height='50' /></div>
                   <div class='px-2'>
                     <h5 class='mb-0 mt-1'>Bass</h5>
                   </div>
@@ -158,7 +159,7 @@ function App() {
               </div>
               <div class='col'>
                 <div class='d-flex p-3'>
-                  <div class='bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm'><img src={logoGuitar} width='23' height='50' /></div>
+                  <div class='rounded bg-light'><img src={logoGuitar} width='23' height='50' /></div>
                   <div class='px-2'>
                     <h5 class='mb-0 mt-1'>Guitar</h5>
                   </div>
@@ -166,7 +167,7 @@ function App() {
               </div>
               <div class='col'>
                 <div class='d-flex p-3'>
-                  <div class='bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm'><img src={logoVocals} width='23' height='50' /></div>
+                  <div class='rounded bg-light'><img src={logoVocals} width='23' height='50' /></div>
                   <div class='px-2'>
                     <h5 class='mb-0 mt-1'>Vocals</h5>
                   </div>
@@ -174,7 +175,7 @@ function App() {
               </div>
               <div class='col'>
                 <div class='d-flex p-3'>
-                  <div class='bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm'><img src={logoDrum} width='23' height='50' /></div>
+                  <div class='rounded bg-light'><img src={logoDrum} width='23' height='50' /></div>
                   <div class='px-2'>
                     <h5 class='mb-0 mt-1'>Drum</h5>
                   </div>
@@ -182,7 +183,7 @@ function App() {
               </div>
               <div class='col'>
                 <div class='d-flex p-3'>
-                  <div class='bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm'><img src={logoKeyboard} width='23' height='50' /></div>
+                  <div class='rounded bg-light'><img src={logoKeyboard} width='23' height='50' /></div>
                   <div class='px-2'>
                     <h5 class='mb-0 mt-1'>Keyboard</h5>
                   </div>
@@ -190,7 +191,7 @@ function App() {
               </div>
               <div class='col'>
                 <div class='d-flex p-3'>
-                  <div class='bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm'><img src={logoJoyHappiness} width='23' height='50' /></div>
+                  <div class='rounded bg-light'><img src={logoJoyHappiness} width='23' height='50' /></div>
                   <div class='px-2'>
                     <h5 class='mb-0 mt-1'>Joy and Happiness</h5>
                   </div>
@@ -205,7 +206,7 @@ function App() {
       </Modal>
 
       { /* Songs Details Modal */}
-      <Modal isOpen={songsDetails} readOnly className='modal-xl'>
+      <Modal isOpen={songsDetails} className='modal-xl'>
         <ModalHeader className='text-center mx-auto'>
           <div>
             <h2>Time Classics</h2>
