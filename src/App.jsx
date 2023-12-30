@@ -108,42 +108,42 @@ function App() {
         <div className='row gy-4 row-cols-1 row-cols-md-2'>
           <div className='col'>
             <div className='d-flex flex-column flex-lg-row'>
-              <div className='w-100'><img className='rounded img-fluid d-block w-100 fit-cover' style={{ height: '200px' }} src='https://upload.wikimedia.org/wikipedia/pt/e/e3/Brave_New_World_-_Iron_Maiden.jpg' /></div>
+              <img className='rounded img-fluid d-block w-100' style={{ height: '200px', objectFit: 'cover' }} src='https://upload.wikimedia.org/wikipedia/pt/e/e3/Brave_New_World_-_Iron_Maiden.jpg' />
               <div className='py-4 py-lg-0 px-lg-4'>
                 <h4 className='text-star'>Brave New World</h4>
-                <p className='text-star'>The first album I've ever heard. Since them, I can't stop loving this band! The come back from Bruce Dickson and the third Rock in Rio edition.</p>
+                <p className='text-star'>The first album I've ever heard. Since then, I can't stop loving this band! The comeback from Bruce Dickinson and the third Rock in Rio edition.</p>
               </div>
             </div>
           </div>
           <div className='col'>
             <div className='d-flex flex-column flex-lg-row'>
-              <div className='w-100'><img className='rounded img-fluid d-block w-100 fit-cover' style={{ height: '200px' }} src='https://upload.wikimedia.org/wikipedia/pt/2/23/The_x_factor_-_iron_maiden.jpg' /></div>
+              <img className='rounded img-fluid d-block w-100' style={{ height: '200px', objectFit: 'cover' }} src='https://upload.wikimedia.org/wikipedia/pt/2/23/The_x_factor_-_iron_maiden.jpg' />
               <div className='py-4 py-lg-0 px-lg-4'>
                 <h4 className='text-star'>The X Factor</h4>
-                <p className='text-star'>An absolutely time classic, powerful, deep and dark vocals from the master Blaze Bayley and the presence of the guitarist magician Janick Gers.</p>
+                <p className='text-star'>An absolute timeless classic, powerful, deep and dark vocals from the master Blaze Bayley and the presence of the guitarist magician Janick Gers.</p>
               </div>
             </div>
           </div>
           <div className='col'>
             <div className='d-flex flex-column flex-lg-row'>
-              <div className='w-100'><img className='rounded img-fluid d-block w-100 fit-cover' style={{ height: '200px' }} src='https://upload.wikimedia.org/wikipedia/en/3/3a/Iron_Maiden_-_Virtual_XI.jpg' /></div>
+              <img className='rounded img-fluid d-block w-100' style={{ height: '200px', objectFit: 'cover' }} src='https://upload.wikimedia.org/wikipedia/en/3/3a/Iron_Maiden_-_Virtual_XI.jpg' />
               <div className='py-4 py-lg-0 px-lg-4'>
                 <h4 className='text-star'>Virtual XI</h4>
-                <p className='text-star'>Say what you want, but The Clansman and Futureal are a hell of great songs. The inspiration an the will to fight from Blaze's voice always give goosebumps.</p>
+                <p className='text-star'>Say what you want, but The Clansman and Futureal are a hell of great songs. The inspiration and the will to fight from Blaze's voice always give goosebumps.</p>
               </div>
             </div>
           </div>
           <div className='col'>
             <div className='d-flex flex-column flex-lg-row'>
-              <div className='w-100'><img className='rounded img-fluid d-block w-100 fit-cover' style={{ height: '200px' }} src='https://upload.wikimedia.org/wikipedia/en/9/9b/Iron_Maiden_-_Somewhere_in_Time.jpg' /></div>
+              <img className='rounded img-fluid d-block w-100' style={{ height: '200px', objectFit: 'cover' }} src='https://upload.wikimedia.org/wikipedia/en/9/9b/Iron_Maiden_-_Somewhere_in_Time.jpg' />
               <div className='py-4 py-lg-0 px-lg-4'>
                 <h4 className='text-star'>Somewhere in Time</h4>
-                <p className='text-star'>The goat, no more and no less. Simply a time classic full of energy from Wasted Years to the contagious rhythm from the The Loneliness of the Long Distance Runner.</p>
+                <p className='text-star'>The goat, no more and no less. Simply a timeless classic full of energy from Wasted Years to the contagious rhythm from The Loneliness of the Long Distance Runner.</p>
               </div>
             </div>
           </div>
         </div>
-        <footer className='text-center fixed-bottom'>
+        <footer className='text-center fixed-bottom '>
           <div className='container text-white py-4 py-lg-5'>
             <ul className='list-inline'>
               <li className='list-inline-item me-4'><a className='link-light' href='https://github.com/JGMelon22/IronMaidenRegistry-Frontend'>Front-end source code</a></li>
@@ -271,9 +271,9 @@ function App() {
               </div>
               {songsInformation.length > 0 ? (
                 <div>
-                  <p className='text-muted mb-2'>{songsInformation[0].name}&nbsp;&nbsp;</p>
-                  <p className='text-muted mb-2'>{songsInformation[0].durationInMinutes} minutes</p>
-                  <p className='text-muted mb-2'>{songsInformation[0].averageScore} stars</p>
+                  <p className='text-muted mb-2 text-center'>{songsInformation[0].name}&nbsp;&nbsp;</p>
+                  <p className='text-muted mb-2 text-center'>{songsInformation[0].durationInMinutes} minutes</p>
+                  <p className='text-muted mb-2 text-center'>{songsInformation[0].averageScore} stars</p>
                 </div>
               ) : (
                 <p>No song information available</p>
@@ -285,9 +285,9 @@ function App() {
               </div>
               {songsInformation.length > 0 ? (
                 <div>
-                  <p className='text-muted mb-2'>{songsInformation[1].name}&nbsp;&nbsp;</p>
-                  <p className='text-muted mb-2'>{songsInformation[1].durationInMinutes} minutes</p>
-                  <p className='text-muted mb-2'>{songsInformation[1].averageScore} stars</p>
+                  <p className='text-muted mb-2 text-center'>{songsInformation[1].name}&nbsp;&nbsp;</p>
+                  <p className='text-muted mb-2 text-center'>{songsInformation[1].durationInMinutes} minutes</p>
+                  <p className='text-muted mb-2 text-center'>{songsInformation[1].averageScore} stars</p>
                 </div>
               ) : (
                 <p>No song information available</p>
@@ -299,9 +299,9 @@ function App() {
               </div>
               {songsInformation.length > 0 ? (
                 <div>
-                  <p className='text-muted mb-2'>{songsInformation[2].name}&nbsp;&nbsp;</p>
-                  <p className='text-muted mb-2'>{songsInformation[2].durationInMinutes} minutes</p>
-                  <p className='text-muted mb-2'>{songsInformation[2].averageScore} stars</p>
+                  <p className='text-muted mb-2 text-center'>{songsInformation[2].name}&nbsp;&nbsp;</p>
+                  <p className='text-muted mb-2 text-center'>{songsInformation[2].durationInMinutes} minutes</p>
+                  <p className='text-muted mb-2 text-center'>{songsInformation[2].averageScore} stars</p>
                 </div>
               ) : (
                 <p>No song information available</p>
@@ -313,9 +313,9 @@ function App() {
               </div>
               {songsInformation.length > 0 ? (
                 <div>
-                  <p className='text-muted mb-2'>{songsInformation[3].name}&nbsp;&nbsp;</p>
-                  <p className='text-muted mb-2'>{songsInformation[3].durationInMinutes} minutes</p>
-                  <p className='text-muted mb-2'>{songsInformation[3].averageScore} stars</p>
+                  <p className='text-muted mb-2 text-center'>{songsInformation[3].name}&nbsp;&nbsp;</p>
+                  <p className='text-muted mb-2 text-center'>{songsInformation[3].durationInMinutes} minutes</p>
+                  <p className='text-muted mb-2 text-center'>{songsInformation[3].averageScore} stars</p>
                 </div>
               ) : (
                 <p>No song information available</p>
