@@ -1,3 +1,8 @@
 #root {
   margin: 0 auto;
 }
+
+#title {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+}
