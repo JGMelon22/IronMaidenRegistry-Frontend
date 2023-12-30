@@ -1,6 +1,14 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
+
+import logoBass from './assets/bass-svgrepo-com.svg'
+import logoDrum from './assets/music-drums-svgrepo-com.svg'
+import logoGuitar from './assets/guitar-svgrepo-com.svg'
+import logoKeyboard from './assets/keyboard-svgrepo-com.svg'
+import logoVocals from './assets/voice-tools-svgrepo-com.svg'
+import logoJoyHappiness from './assets/happy-svgrepo-com.svg'
+
 import './App.css'
 
 function App() {
@@ -12,6 +20,14 @@ function App() {
   const [dataInstrument, setDataInstrument] = useState([])
   const [dataMember, setDataMember] = useState([])
   const [dataSong, setDataSong] = useState([])
+
+  // Modals
+  const [instrumentsDetails, setInstrumentsDetails] = useState(false);
+
+  // Modal State (open/close)
+  const openCloseInstrumentsDetails = () => {
+    setInstrumentsDetails(!instrumentsDetails);
+  }
 
   // Get Data
   const requestInstrumentsGet = async () => {
@@ -52,7 +68,7 @@ function App() {
             <ul className='navbar-nav ms-auto'>
               <li className='nav-item'><a className='nav-link active' href='#'>Members</a></li>
               <li className='nav-item'><a className='nav-link' href='#'>Hits</a></li>
-              <li className='nav-item'><a className='nav-link' href='#'>Instruments</a></li>
+              <li className='nav-item'><a className='nav-link' onClick={() => openCloseInstrumentsDetails()} href='#'>Instruments</a></li>
             </ul>
           </div>
         </div>
@@ -116,6 +132,72 @@ function App() {
           </div>
         </footer>
       </div>
+
+      { /* Instruments Details Modal */}
+      <Modal isOpen={instrumentsDetails}>
+        <ModalHeader>
+          <div class="col-md-8 col-xl-6 text-center mx-auto">
+            <p class="w-lg-50">Meet the instruments from our heroes</p>
+          </div>
+        </ModalHeader>
+        <ModalBody className='bg-dark'>
+          <div class="container py-4 py-xl-5">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
+              <div class="col">
+                <div class="d-flex p-3">
+                  <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm"><img src={logoBass} width="23" height="50" /></div>
+                  <div class="px-2">
+                    <h5 class="mb-0 mt-1">Bass</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex p-3">
+                  <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm"><img src={logoGuitar} width="23" height="50" /></div>
+                  <div class="px-2">
+                    <h5 class="mb-0 mt-1">Guitar</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex p-3">
+                  <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm"><img src={logoVocals} width="23" height="50" /></div>
+                  <div class="px-2">
+                    <h5 class="mb-0 mt-1">Vocals</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex p-3">
+                  <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm"><img src={logoDrum} width="23" height="50" /></div>
+                  <div class="px-2">
+                    <h5 class="mb-0 mt-1">Drum</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex p-3">
+                  <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm"><img src={logoKeyboard} width="23" height="50" /></div>
+                  <div class="px-2">
+                    <h5 class="mb-0 mt-1">Keyboard</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex p-3">
+                  <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm"><img src={logoJoyHappiness} width="23" height="50" /></div>
+                  <div class="px-2">
+                    <h5 class="mb-0 mt-1">Joy and Happiness</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ModalBody>
+        <ModalFooter>
+          <button className='btn btn-secondary m-1' onClick={() => openCloseInstrumentsDetails()}>Close</button>
+        </ModalFooter>
+      </Modal>
     </>
   )
 }
