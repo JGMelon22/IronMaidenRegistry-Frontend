@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
 
@@ -14,7 +14,7 @@ import './App.css'
 function App() {
 
   const instrumentsBaseUrl = 'http://localhost:5200/api/Instruments'
-  const membersBaseUrl = 'http://localhost:5200/api/Members'
+  const membersBaseUrl = 'http://localhost:5200/api/members'
   const songsBaseUrl = 'http://localhost:5200/api/Songs'
 
   const [dataInstrument, setDataInstrument] = useState([])
@@ -43,29 +43,34 @@ function App() {
   const requestInstrumentsGet = async () => {
     await axios.get(instrumentsBaseUrl)
       .then(response => {
-        setDataInstrument(response.dataInstrument)
+        setDataInstrument(response.data.data)
       }).catch(error => {
         alert(error)
       })
   }
 
   const requestMembersGet = async () => {
-    await axios.get(membersBaseUrl)
+    try {
+      const response = await axios.get(membersBaseUrl);
+      setDataMember(response.data.data);
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
+  const requestSongsGet = async () => {
+    await axios.get(songsBaseUrl)
       .then(response => {
-        setDataMember(response.dataMember)
+        setDataSong(response.data.data)
       }).catch(error => {
         alert(error)
       })
   }
 
-  const requestSongsGet = async () => {
-    await axios.get(songsBaseUrl)
-      .then(response => {
-        setDataSong(response.dataSong)
-      }).catch(error => {
-        alert(error)
-      })
-  }
+  // useEffect 
+  useEffect(() => {
+    requestMembersGet();
+  }, []);
 
   return (
     <>
@@ -226,10 +231,12 @@ function App() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Steve Harris</td>
-                <td>12/03/1956</td>
-              </tr>
+              {dataMember.map((member, index) => (
+                <tr key={index}>
+                  <td>{member.fullName}</td>
+                  <td>{member.birthDate}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </ModalBody>
