@@ -67,9 +67,13 @@ function App() {
       })
   }
 
+  // Map Instruments Array
+  let instrumentNames = dataInstrument.map((instrument, index) => instrument.name);
+
   // useEffect 
   useEffect(() => {
-    requestMembersGet();
+    requestInstrumentsGet(),
+      requestMembersGet();
   }, []);
 
   return (
@@ -152,58 +156,58 @@ function App() {
       <Modal isOpen={instrumentsDetails} className='modal-lg'>
         <ModalHeader className='text-center mx-auto'>
           <div>
-            <p class='w-lg-50'>Meet the instruments</p>
+            <p className='w-lg-50'>Meet the instruments</p>
             <p>from our heroes</p>
           </div>
         </ModalHeader>
         <ModalBody>
-          <div class='container py-4 py-xl-5'>
-            <div class='row row-cols-1 row-cols-md-2 row-cols-xl-3'>
-              <div class='col'>
-                <div class='d-flex p-3'>
-                  <div class='rounded bg-light'><img src={logoBass} width='23' height='50' /></div>
-                  <div class='px-2'>
-                    <h5 class='mb-0 mt-1'>Bass</h5>
+          <div className='container py-4 py-xl-5'>
+            <div className='row row-cols-1 row-cols-md-2 row-cols-xl-3'>
+              <div className='col'>
+                <div className='d-flex p-3'>
+                  <div className='rounded bg-light'><img src={logoBass} width='23' height='50' /></div>
+                  <div className='px-2'>
+                    <h5 className='mb-0 mt-1'>{instrumentNames[1]}</h5>
                   </div>
                 </div>
               </div>
-              <div class='col'>
-                <div class='d-flex p-3'>
-                  <div class='rounded bg-light'><img src={logoGuitar} width='23' height='50' /></div>
-                  <div class='px-2'>
-                    <h5 class='mb-0 mt-1'>Guitar</h5>
+              <div className='col'>
+                <div className='d-flex p-3'>
+                  <div className='rounded bg-light'><img src={logoGuitar} width='23' height='50' /></div>
+                  <div className='px-2'>
+                    <h5 className='mb-0 mt-1'>{instrumentNames[2]}</h5>
                   </div>
                 </div>
               </div>
-              <div class='col'>
-                <div class='d-flex p-3'>
-                  <div class='rounded bg-light'><img src={logoVocals} width='23' height='50' /></div>
-                  <div class='px-2'>
-                    <h5 class='mb-0 mt-1'>Vocals</h5>
+              <div className='col'>
+                <div className='d-flex p-3'>
+                  <div className='rounded bg-light'><img src={logoVocals} width='23' height='50' /></div>
+                  <div className='px-2'>
+                    <h5 className='mb-0 mt-1'>{instrumentNames[0]}</h5>
                   </div>
                 </div>
               </div>
-              <div class='col'>
-                <div class='d-flex p-3'>
-                  <div class='rounded bg-light'><img src={logoDrum} width='23' height='50' /></div>
-                  <div class='px-2'>
-                    <h5 class='mb-0 mt-1'>Drum</h5>
+              <div className='col'>
+                <div className='d-flex p-3'>
+                  <div className='rounded bg-light'><img src={logoDrum} width='23' height='50' /></div>
+                  <div className='px-2'>
+                    <h5 className='mb-0 mt-1'>{instrumentNames[4]}</h5>
                   </div>
                 </div>
               </div>
-              <div class='col'>
-                <div class='d-flex p-3'>
-                  <div class='rounded bg-light'><img src={logoKeyboard} width='23' height='50' /></div>
-                  <div class='px-2'>
-                    <h5 class='mb-0 mt-1'>Keyboard</h5>
+              <div className='col'>
+                <div className='d-flex p-3'>
+                  <div className='rounded bg-light'><img src={logoKeyboard} width='23' height='50' /></div>
+                  <div className='px-2'>
+                    <h5 className='mb-0 mt-1'>{instrumentNames[3]}</h5>
                   </div>
                 </div>
               </div>
-              <div class='col'>
-                <div class='d-flex p-3'>
-                  <div class='rounded bg-light'><img src={logoJoyHappiness} width='23' height='50' /></div>
-                  <div class='px-2'>
-                    <h5 class='mb-0 mt-1'>Joy and Happiness</h5>
+              <div className='col'>
+                <div className='d-flex p-3'>
+                  <div className='rounded bg-light'><img src={logoJoyHappiness} width='23' height='50' /></div>
+                  <div className='px-2'>
+                    <h5 className='mb-0 mt-1'>Joy and Happiness</h5>
                   </div>
                 </div>
               </div>
@@ -254,38 +258,38 @@ function App() {
           </div>
         </ModalHeader>
         <ModalBody className='form-group'>
-          <div class='row gy-4 row-cols-2 row-cols-md-4'>
-            <div class='col'>
-              <div class='card border-0 shadow-none'>
-                <div class='card-body text-center d-flex flex-column align-items-center p-0'><img class='rounded-circle mb-3 fit-cover' width='130' height='130' src='https://i.ytimg.com/vi/7DcVwd31uC0/maxresdefault.jpg' /></div>
+          <div className='row gy-4 row-cols-2 row-cols-md-4'>
+            <div className='col'>
+              <div className='card border-0 shadow-none'>
+                <div className='card-body text-center d-flex flex-column align-items-center p-0'><img className='rounded-circle mb-3 fit-cover' width='130' height='130' src='https://i.ytimg.com/vi/7DcVwd31uC0/maxresdefault.jpg' /></div>
               </div>
-              <p class='text-muted mb-2'>Name:&nbsp;&nbsp;</p>
-              <p class='text-muted mb-2'>Duration in Minutes:&nbsp;</p>
-              <p class='text-muted mb-2'>Score:&nbsp;</p>
+              <p className='text-muted mb-2'>Name:&nbsp;&nbsp;</p>
+              <p className='text-muted mb-2'>Duration in Minutes:&nbsp;</p>
+              <p className='text-muted mb-2'>Score:&nbsp;</p>
             </div>
-            <div class='col'>
-              <div class='card border-0 shadow-none'>
-                <div class='card-body text-center d-flex flex-column align-items-center p-0'><img class='rounded-circle mb-3 fit-cover' width='130' height='130' src='https://i.ytimg.com/vi/p3Uy1YhBsvs/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&amp;rs=AOn4CLBooB-qMh8mPiPwcDBsI-gEwVXrHQ' /></div>
+            <div className='col'>
+              <div className='card border-0 shadow-none'>
+                <div className='card-body text-center d-flex flex-column align-items-center p-0'><img className='rounded-circle mb-3 fit-cover' width='130' height='130' src='https://i.ytimg.com/vi/p3Uy1YhBsvs/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&amp;rs=AOn4CLBooB-qMh8mPiPwcDBsI-gEwVXrHQ' /></div>
               </div>
-              <p class='text-muted mb-2'>Name:&nbsp;&nbsp;</p>
-              <p class='text-muted mb-2'>Duration in Minutes:&nbsp;</p>
-              <p class='text-muted mb-2'>Score:&nbsp;</p>
+              <p className='text-muted mb-2'>Name:&nbsp;&nbsp;</p>
+              <p className='text-muted mb-2'>Duration in Minutes:&nbsp;</p>
+              <p className='text-muted mb-2'>Score:&nbsp;</p>
             </div>
-            <div class='col'>
-              <div class='card border-0 shadow-none'>
-                <div class='card-body text-center d-flex flex-column align-items-center p-0'><img class='rounded-circle mb-3 fit-cover' width='130' height='130' src='https://upload.wikimedia.org/wikipedia/pt/f/f7/Trooper.jpg' /></div>
+            <div className='col'>
+              <div className='card border-0 shadow-none'>
+                <div className='card-body text-center d-flex flex-column align-items-center p-0'><img className='rounded-circle mb-3 fit-cover' width='130' height='130' src='https://upload.wikimedia.org/wikipedia/pt/f/f7/Trooper.jpg' /></div>
               </div>
-              <p class='text-muted mb-2'>Name:&nbsp;&nbsp;</p>
-              <p class='text-muted mb-2'>Duration in Minutes:&nbsp;</p>
-              <p class='text-muted mb-2'>Score:&nbsp;</p>
+              <p className='text-muted mb-2'>Name:&nbsp;&nbsp;</p>
+              <p className='text-muted mb-2'>Duration in Minutes:&nbsp;</p>
+              <p className='text-muted mb-2'>Score:&nbsp;</p>
             </div>
-            <div class='col'>
-              <div class='card border-0 shadow-none'>
-                <div class='card-body text-center d-flex flex-column align-items-center p-0'><img class='rounded-circle mb-3 fit-cover' width='130' height='130' src='https://upload.wikimedia.org/wikipedia/pt/6/64/Fear_of_the_dark_-_iron_maiden.jpg' /></div>
+            <div className='col'>
+              <div className='card border-0 shadow-none'>
+                <div className='card-body text-center d-flex flex-column align-items-center p-0'><img className='rounded-circle mb-3 fit-cover' width='130' height='130' src='https://upload.wikimedia.org/wikipedia/pt/6/64/Fear_of_the_dark_-_iron_maiden.jpg' /></div>
               </div>
-              <p class='text-muted mb-2'>Name:&nbsp;&nbsp;</p>
-              <p class='text-muted mb-2'>Duration in Minutes:&nbsp;</p>
-              <p class='text-muted mb-2'>Score:&nbsp;</p>
+              <p className='text-muted mb-2'>Name:&nbsp;&nbsp;</p>
+              <p className='text-muted mb-2'>Duration in Minutes:&nbsp;</p>
+              <p className='text-muted mb-2'>Score:&nbsp;</p>
             </div>
           </div>
         </ModalBody>
