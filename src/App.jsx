@@ -67,13 +67,19 @@ function App() {
       })
   }
 
-  // Map Instruments Array
-  let instrumentNames = dataInstrument.map((instrument, index) => instrument.name);
+  // Map Instruments and Songs Array
+  let instrumentNames = dataInstrument.map((instrument) => instrument.name);
+  let songsInformation = dataSong.map((song) => ({
+    name: song.name,
+    durationInMinutes: song.durationInMinutes,
+    averageScore: song.averageScore,
+  }));
 
   // useEffect 
   useEffect(() => {
-    requestInstrumentsGet(),
-      requestMembersGet();
+    requestInstrumentsGet();
+    requestMembersGet();
+    requestSongsGet();
   }, []);
 
   return (
@@ -104,8 +110,8 @@ function App() {
             <div className='d-flex flex-column flex-lg-row'>
               <div className='w-100'><img className='rounded img-fluid d-block w-100 fit-cover' style={{ height: '200px' }} src='https://upload.wikimedia.org/wikipedia/pt/e/e3/Brave_New_World_-_Iron_Maiden.jpg' /></div>
               <div className='py-4 py-lg-0 px-lg-4'>
-                <h4>Brave New World</h4>
-                <p>The first album I've ever heard. Since them, I can't stop loving this band! The come back from Bruce Dickson and the third Rock in Rio edition.</p>
+                <h4 className='text-star'>Brave New World</h4>
+                <p className='text-star'>The first album I've ever heard. Since them, I can't stop loving this band! The come back from Bruce Dickson and the third Rock in Rio edition.</p>
               </div>
             </div>
           </div>
@@ -113,8 +119,8 @@ function App() {
             <div className='d-flex flex-column flex-lg-row'>
               <div className='w-100'><img className='rounded img-fluid d-block w-100 fit-cover' style={{ height: '200px' }} src='https://upload.wikimedia.org/wikipedia/pt/2/23/The_x_factor_-_iron_maiden.jpg' /></div>
               <div className='py-4 py-lg-0 px-lg-4'>
-                <h4 >The X Factor</h4>
-                <p>An absolutely time classic, powerful, deep and dark vocals from the master Blaze Bayley and the presence of the guitarist magician Janick Gers.</p>
+                <h4 className='text-star'>The X Factor</h4>
+                <p className='text-star'>An absolutely time classic, powerful, deep and dark vocals from the master Blaze Bayley and the presence of the guitarist magician Janick Gers.</p>
               </div>
             </div>
           </div>
@@ -122,8 +128,8 @@ function App() {
             <div className='d-flex flex-column flex-lg-row'>
               <div className='w-100'><img className='rounded img-fluid d-block w-100 fit-cover' style={{ height: '200px' }} src='https://upload.wikimedia.org/wikipedia/en/3/3a/Iron_Maiden_-_Virtual_XI.jpg' /></div>
               <div className='py-4 py-lg-0 px-lg-4'>
-                <h4>Virtual XI</h4>
-                <p>Say what you want, but The Clansman and Futureal are a hell of great songs. The inspiration an the will to fight from Blaze's voice always give goosebumps.</p>
+                <h4 className='text-star'>Virtual XI</h4>
+                <p className='text-star'>Say what you want, but The Clansman and Futureal are a hell of great songs. The inspiration an the will to fight from Blaze's voice always give goosebumps.</p>
               </div>
             </div>
           </div>
@@ -131,8 +137,8 @@ function App() {
             <div className='d-flex flex-column flex-lg-row'>
               <div className='w-100'><img className='rounded img-fluid d-block w-100 fit-cover' style={{ height: '200px' }} src='https://upload.wikimedia.org/wikipedia/en/9/9b/Iron_Maiden_-_Somewhere_in_Time.jpg' /></div>
               <div className='py-4 py-lg-0 px-lg-4'>
-                <h4>Somewhere in Time</h4>
-                <p>The goat, no more and no less. Simply a time classic full of energy from Wasted Years to the contagious rhythm from the The Loneliness of the Long Distance Runner.</p>
+                <h4 className='text-star'>Somewhere in Time</h4>
+                <p className='text-star'>The goat, no more and no less. Simply a time classic full of energy from Wasted Years to the contagious rhythm from the The Loneliness of the Long Distance Runner.</p>
               </div>
             </div>
           </div>
@@ -150,10 +156,10 @@ function App() {
             <p className='text-muted mb-0'>© 2023 - Iron Maiden - <a href='https://keanecreative.co.uk/?utm_source=ironmaiden&utm_medium=link&utm_campaign=websitelink'> Website Designed & Developed by Keane Creative Ltd.</a></p>
           </div>
         </footer>
-      </div>
+      </div >
 
       { /* Instruments Details Modal */}
-      <Modal isOpen={instrumentsDetails} className='modal-lg'>
+      < Modal isOpen={instrumentsDetails} className='modal-lg' >
         <ModalHeader className='text-center mx-auto'>
           <div>
             <p className='w-lg-50'>Meet the instruments</p>
@@ -217,10 +223,10 @@ function App() {
         <ModalFooter>
           <button className='btn btn-secondary m-1' onClick={() => openCloseInstrumentsDetails()}>Close</button>
         </ModalFooter>
-      </Modal>
+      </Modal >
 
-      { /* Instruments Details Modal */}
-      <Modal isOpen={memberDetails} className='modal-lg'>
+      { /* Members Details Modal */}
+      < Modal isOpen={memberDetails} className='modal-lg' >
         <ModalHeader className='text-center mx-auto'>
           <div>
             <h3>The legends</h3>
@@ -247,10 +253,10 @@ function App() {
         <ModalFooter>
           <button className='btn btn-secondary m-1' onClick={() => openCloseMembersDetails()}>Close</button>
         </ModalFooter>
-      </Modal>
+      </Modal >
 
       { /* Songs Details Modal */}
-      <Modal isOpen={songsDetails} className='modal-xl'>
+      < Modal isOpen={songsDetails} className='modal-xl' >
         <ModalHeader className='text-center mx-auto'>
           <div>
             <h2>Time Classics</h2>
@@ -263,33 +269,57 @@ function App() {
               <div className='card border-0 shadow-none'>
                 <div className='card-body text-center d-flex flex-column align-items-center p-0'><img className='rounded-circle mb-3 fit-cover' width='130' height='130' src='https://i.ytimg.com/vi/7DcVwd31uC0/maxresdefault.jpg' /></div>
               </div>
-              <p className='text-muted mb-2'>Name:&nbsp;&nbsp;</p>
-              <p className='text-muted mb-2'>Duration in Minutes:&nbsp;</p>
-              <p className='text-muted mb-2'>Score:&nbsp;</p>
+              {songsInformation.length > 0 ? (
+                <div>
+                  <p className='text-muted mb-2'>{songsInformation[0].name}&nbsp;&nbsp;</p>
+                  <p className='text-muted mb-2'>{songsInformation[0].durationInMinutes} minutes</p>
+                  <p className='text-muted mb-2'>{songsInformation[0].averageScore} stars</p>
+                </div>
+              ) : (
+                <p>No song information available</p>
+              )}
             </div>
             <div className='col'>
               <div className='card border-0 shadow-none'>
                 <div className='card-body text-center d-flex flex-column align-items-center p-0'><img className='rounded-circle mb-3 fit-cover' width='130' height='130' src='https://i.ytimg.com/vi/p3Uy1YhBsvs/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&amp;rs=AOn4CLBooB-qMh8mPiPwcDBsI-gEwVXrHQ' /></div>
               </div>
-              <p className='text-muted mb-2'>Name:&nbsp;&nbsp;</p>
-              <p className='text-muted mb-2'>Duration in Minutes:&nbsp;</p>
-              <p className='text-muted mb-2'>Score:&nbsp;</p>
+              {songsInformation.length > 0 ? (
+                <div>
+                  <p className='text-muted mb-2'>{songsInformation[1].name}&nbsp;&nbsp;</p>
+                  <p className='text-muted mb-2'>{songsInformation[1].durationInMinutes} minutes</p>
+                  <p className='text-muted mb-2'>{songsInformation[1].averageScore} stars</p>
+                </div>
+              ) : (
+                <p>No song information available</p>
+              )}
             </div>
             <div className='col'>
               <div className='card border-0 shadow-none'>
                 <div className='card-body text-center d-flex flex-column align-items-center p-0'><img className='rounded-circle mb-3 fit-cover' width='130' height='130' src='https://upload.wikimedia.org/wikipedia/pt/f/f7/Trooper.jpg' /></div>
               </div>
-              <p className='text-muted mb-2'>Name:&nbsp;&nbsp;</p>
-              <p className='text-muted mb-2'>Duration in Minutes:&nbsp;</p>
-              <p className='text-muted mb-2'>Score:&nbsp;</p>
+              {songsInformation.length > 0 ? (
+                <div>
+                  <p className='text-muted mb-2'>{songsInformation[2].name}&nbsp;&nbsp;</p>
+                  <p className='text-muted mb-2'>{songsInformation[2].durationInMinutes} minutes</p>
+                  <p className='text-muted mb-2'>{songsInformation[2].averageScore} stars</p>
+                </div>
+              ) : (
+                <p>No song information available</p>
+              )}
             </div>
             <div className='col'>
               <div className='card border-0 shadow-none'>
                 <div className='card-body text-center d-flex flex-column align-items-center p-0'><img className='rounded-circle mb-3 fit-cover' width='130' height='130' src='https://upload.wikimedia.org/wikipedia/pt/6/64/Fear_of_the_dark_-_iron_maiden.jpg' /></div>
               </div>
-              <p className='text-muted mb-2'>Name:&nbsp;&nbsp;</p>
-              <p className='text-muted mb-2'>Duration in Minutes:&nbsp;</p>
-              <p className='text-muted mb-2'>Score:&nbsp;</p>
+              {songsInformation.length > 0 ? (
+                <div>
+                  <p className='text-muted mb-2'>{songsInformation[3].name}&nbsp;&nbsp;</p>
+                  <p className='text-muted mb-2'>{songsInformation[3].durationInMinutes} minutes</p>
+                  <p className='text-muted mb-2'>{songsInformation[3].averageScore} stars</p>
+                </div>
+              ) : (
+                <p>No song information available</p>
+              )}
             </div>
           </div>
         </ModalBody>
