@@ -75,6 +75,12 @@ function App() {
     averageScore: song.averageScore,
   }));
 
+  // Format birth date
+  const dateFormatter = (birthDate) => {
+    const formattedDate = new Date(birthDate).toLocaleDateString('pt-BR');
+    return formattedDate;
+  }
+
   // useEffect 
   useEffect(() => {
     requestInstrumentsGet();
@@ -233,7 +239,7 @@ function App() {
           </div>
         </ModalHeader>
         <ModalBody className='form-group'>
-          <table className='table table-bordered table-hover'>
+          <table className='table table-striped table-bordered table-hover'>
             <thead>
               <tr>
                 <th className='text-center'>Full Name</th>
@@ -244,7 +250,7 @@ function App() {
               {dataMember.map((member, index) => (
                 <tr key={index}>
                   <td>{member.fullName}</td>
-                  <td>{member.birthDate}</td>
+                  <td>{dateFormatter(member.birthDate)}</td>
                 </tr>
               ))}
             </tbody>
